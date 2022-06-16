@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\BerkasUnggah;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+      $files  =   BerkasUnggah::all();
+      // return view('berkasUnggahList', compact('files'));
+        return view('home', compact('files'));
     }
 }

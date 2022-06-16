@@ -1,0 +1,12 @@
+php artisan make:model BerkasUnggah --migration
+--edit create_berkas_unggah
+--edit BerkasUnggah.php
+--edit home.blade
+--edit app.blade
+php artisan migrate
+php artisan make:controller BerkasUnggahController --resource
+--edit web.php
+	Route::resource('berkasUnggah','BerkasUnggahController');
+aktifkan extension=fileinfo di php.ini
+---edit BerkasUnggahController
+---edit berkasUnggahList.php
