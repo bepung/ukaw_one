@@ -9,8 +9,17 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
+        <!-- Scripts -->
+        <script src="{{ asset('js/app.js') }}" defer></script>
+
         <!-- Styles -->
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/_login.css') }}" rel="stylesheet">
         <style>
+        .dropdown-menu{
+          background-color: #C5D1DA;
+          border: 1px solid #69899F;
+        }
             html, body {
                 background-color: #fff;
                 color: #636b6f;
@@ -68,10 +77,26 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href=""></a>
+                        <button type="button" class="btn btn-info btn-lg" >{{ Auth::user()->name }}</button>
+                        <!-- onclick="window.location='{{ url("/home")}}'" -->
+                        <button type="button" class="btn btn-danger dropdown-toggle btn-lg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <span class="caret"></span>
+                          <span class="sr-only"></span>
+                        </button>
+
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item"  href="{{ route('home')}}">Home</a></li>
+                          <li role="separator" class="divider"></li>
+                          <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                </form>
+                          </li>
+                        </ul>
                     @else
                         <a href="{{ route('login') }}">Login</a>
-
                         @if (Route::has('register_xxx'))
                             <a href="{{ route('register') }}">Register</a>
                         @endif
@@ -80,6 +105,7 @@
             @endif
 
             <div class="content">
+    						<img src="{{ asset('img/logo.png') }}" width="250px" alt="Logo"/>
                 <div class="title m-b-md">
                     Universitas Kristen Artha Wacana
                 </div>
