@@ -9,10 +9,10 @@
 @endif
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 
   <div class="container">
-   <h3 align="center">Data Import Mahasiswa</h3>
+   <h3 align="center">Data Mahasiswa</h3>
     <br />
    @if(count($errors) > 0)
     <div class="alert alert-danger">
@@ -35,7 +35,7 @@
    <br />
    <div class="panel panel-default">
     <div class="panel-heading">
-     <h3 class="panel-title">Data Mahasiswa</h3>
+     <!-- <h3 class="panel-title">Data Mahasiswa</h3> -->
     </div>
     <div class="panel-body">
      <div class="table-responsive">

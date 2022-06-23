@@ -10,8 +10,8 @@
 <!-- spinner --> <section id="loading"><div id="loading-content"></div></section>
 
 <h1>Daftar Berkas &nbsp;
-  <button type="button" class="btn btn-primary btn-sm" onclick="window.location.href='{{ route("berkasImport.show", "0" )}}'">Lihat</button>
-  <button type="button" class="btn btn-info btn-sm" onclick="window.location='{{ route("berkasUnggah.index") }}'">Tambah</button></h1>
+  <button type="button" class="btn btn-primary btn-sm" onclick="window.location.href='{{ route("berkasImport.show", "0" )}}'">Lihat Data</button>
+  <button type="button" class="btn btn-info btn-sm" onclick="window.location='{{ route("berkasUnggah.index") }}'">Tambah Berkas</button></h1>
 <div class="container ">
 <table class="table table-bordered table-striped table-hover">
   <tr>
@@ -35,13 +35,13 @@
             @method('POST')
             @csrf
             <input type="hidden" name="filename" value="{{ $BerkasUnggah->filename}}"/>
-          <button type="submit" class="btn btn-success btn-sm">Simpan</button>
+          <button type="submit" class="btn btn-success btn-sm">Salin Data</button>
           </form>
           <form onsubmit="beginLoad();" method="POST" action="{{ route('berkasUnggah.destroy', $BerkasUnggah->filename )}}" style="display:inline">
             @method('DELETE')
             @csrf
             <input type="hidden" name="filename" value="{{ $BerkasUnggah->filename}}"/>
-          <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+          <button type="submit" class="btn btn-danger btn-sm">Hapus Berkas</button>
           </form>
         </td>
   </tr>
