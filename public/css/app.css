@@ -57,7 +57,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 body {
   margin: 0;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.875rem;
+  font-size: 0.9rem; /*0.875 bepung tulisan dalam body */
   font-weight: 400;
   line-height: 1.5;
   color: #333;
@@ -2884,7 +2884,7 @@ tbody.collapse.show {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   margin-right: 1rem;
-  font-size: 0.875rem;
+  font-size: 1.4rem; /* 0.875 bepung  text kiri di navbar*/
   line-height: inherit;
   white-space: nowrap; }
   .navbar-brand:hover, .navbar-brand:focus {

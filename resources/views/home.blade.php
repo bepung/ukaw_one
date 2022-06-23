@@ -12,7 +12,7 @@
 <h1>Daftar Berkas &nbsp;
   <button type="button" class="btn btn-primary btn-sm" onclick="window.location.href='{{ route("berkasImport.show", "0" )}}'">Lihat Data</button>
   <button type="button" class="btn btn-info btn-sm" onclick="window.location='{{ route("berkasUnggah.index") }}'">Tambah Berkas</button></h1>
-<div class="container ">
+<div class="container">
 <table class="table table-bordered table-striped table-hover">
   <tr>
       <th>Nomer</th>
