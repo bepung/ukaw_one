@@ -1,0 +1,27 @@
+/* spinner begin */
+.loading {
+ z-index: 20;
+ position: absolute;
+ top: 0;
+ left:-5px;
+ width: 100%;
+ height: 100%;
+   background-color: rgba(0,0,0,0.75);
+}
+.loading-content {
+ position: absolute;
+ border: 16px solid #ff3300; /* ring */
+ border-top: 16px solid #ff3300; /* highlight */
+ border-radius: 50%;
+ width: 10%;
+ height: 10%;
+ top: 20%;
+ left:40%;
+ animation: spin 2s linear infinite;
+ }
+
+ @keyframes spin {
+   0% { transform: rotate(0deg); }
+   100% { transform: rotate(360deg); }
+ }
+/* spinner end  */

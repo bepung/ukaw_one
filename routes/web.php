@@ -18,3 +18,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::resource('berkasUnggah','BerkasUnggahController');
+
+// Route::get('berkasImportView','ImportMahasiswaController@index');
+// Route::get('berkasImportStore/{filename}','ImportMahasiswaController@import')->name('berkasImportStore');
+
+Route::resource('berkasImport','MahasiswaImportController')->only(['store','show']);

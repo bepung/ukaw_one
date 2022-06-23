@@ -73,6 +73,7 @@
         </style>
     </head>
     <body>
+
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -105,7 +106,7 @@
             @endif
 
             <div class="content">
-    						<img src="{{ asset('img/logo.png') }}" width="250px" alt="Logo"/>
+               <img src="{{ asset('img/logo.png') }}" width="250px" alt="Logo"/>
                 <div class="title m-b-md">
                     Universitas Kristen Artha Wacana
                 </div>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\BerkasUnggah;
 use File;
+use DB;
 
 class BerkasUnggahController extends Controller
 {
@@ -15,9 +16,9 @@ class BerkasUnggahController extends Controller
      * @return \Illuminate\Http\Response
      */
      public function index()
-         {
+     {
              return view('berkasUnggah');
-         }
+     }
 
     /**
      * Show the form for creating a new resource.
@@ -38,7 +39,7 @@ class BerkasUnggahController extends Controller
      public function store(Request $request)  {
              // file validation
              $validator      =   Validator::make($request->all(),
-                 ['filename'      =>   'required|mimes:xls,xlsx|max:2048']);
+                 ['filename'      =>   'required|mimes:xls,xlsx|max:50000']);
              // if validation fails
              if($validator->fails()) {
                  return back()->withErrors($validator->errors());
@@ -85,7 +86,7 @@ class BerkasUnggahController extends Controller
      */
     public function show($id)
     {
-        //
+      //
     }
 
     /**
