@@ -8,9 +8,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous"></script>
 <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script> -->
 
-
     <div class="container mt-5">
     <form action="{{ route('berkasUnggah.store') }}" method="post" enctype="multipart/form-data">
+      <h3 align="center">Unggah Berkas Mahasiswa</h3>
         <div class="row">
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 m-auto">
                 <div class="card shadow">

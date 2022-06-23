@@ -12,8 +12,7 @@
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 
   <div class="container">
-   <h3 align="center">Data Mahasiswa</h3>
-    <br />
+   <!-- <h3 align="center">Data Mahasiswa</h3> -->
    @if(count($errors) > 0)
     <div class="alert alert-danger">
      Upload Validation Error<br><br>
@@ -32,10 +31,9 @@
    </div>
    @endif
 
-   <br />
    <div class="panel panel-default">
     <div class="panel-heading">
-     <!-- <h3 class="panel-title">Data Mahasiswa</h3> -->
+     <h3 class="panel-title">Data Mahasiswa</h3>
     </div>
     <div class="panel-body">
      <div class="table-responsive">
@@ -45,17 +43,17 @@
         <th>Nama</th>
         <th>Agama</th>
         <th>Alamat</th>
-        <th>Kecamatan</th>
         <th>Kota/Kabupaten</th>
+        <th>Jurusan</th>
        </tr>
        @foreach($data as $row)
        <tr>
         <td>{{ $row->nim }}</td>
         <td>{{ $row->nama }}</td>
-        <td>{{ $row->agama }}</td>
+        <td>@php $ag=array_reverse(explode("-", $row->agama)); echo $ag[0]; @endphp</td>
         <td>{{ $row->alamat }}</td>
-        <td>{{ $row->kecamatan }}</td>
         <td>{{ $row->kota_kabupaten }}</td>
+        <td>@php $jur=array_reverse(explode("-", $row->jurusan)); echo $jur[0]; @endphp </td>
        </tr>
        @endforeach
       </table>

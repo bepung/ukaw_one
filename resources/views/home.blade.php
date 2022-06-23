@@ -8,11 +8,10 @@
     </div>
 @endif
 <!-- spinner --> <section id="loading"><div id="loading-content"></div></section>
-
-<h1>Daftar Berkas &nbsp;
-  <button type="button" class="btn btn-primary btn-sm" onclick="window.location.href='{{ route("berkasImport.show", "0" )}}'">Lihat Data</button>
-  <button type="button" class="btn btn-info btn-sm" onclick="window.location='{{ route("berkasUnggah.index") }}'">Tambah Berkas</button></h1>
+  <!-- <button type="button" class="btn btn-primary btn-sm" onclick="window.location.href='{{ route("berkasImport.show", "0" )}}'">Lihat Data</button> -->
+  <!-- <button type="button" class="btn btn-info btn-sm" onclick="window.location='{{ route("berkasUnggah.index") }}'">Tambah Berkas</button> -->
 <div class="container">
+  <h3 class="panel-tittle">Data Berkas</h3>
 <table class="table table-bordered table-striped table-hover">
   <tr>
       <th>Nomer</th>
