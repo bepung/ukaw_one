@@ -44,8 +44,8 @@ class MahasiswaImportToModel implements ToModel, SkipsEmptyRows, SkipsOnError, W
         return new MahasiswaImport([
           'id' => isset($row['id'])?$row['id']:'',
           'nim' => isset($row['nim'])?$row['nim']:'',
-          'alamat' => isset($row['nama'])?$row['nama']:'',
-          'nama' => isset($row['alamat'])?$row['alamat']:'',
+          'alamat' => isset($row['alamat'])?$row['alamat']:'',
+          'nama' => isset($row['nama'])?$row['nama']:'',
           'telp' => isset($row['telp'])?$row['telp']:'',
           'email' => isset($row['email'])?$row['email']:'',
           'tahun_angkatan' => isset($row['tahunangkatan'])?$row['tahunangkatan']:'',
