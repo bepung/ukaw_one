@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMahasiswaImportTable extends Migration
+class CreateMahasiswaExportTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateMahasiswaImportTable extends Migration
      */
     public function up()
     {
-        Schema::create('mahasiswa_import', function (Blueprint $table) {
+        Schema::create('mahasiswa_export', function (Blueprint $table) {
             $table->string('id',20)->nullable();
             $table->string('nim',20)->unique();
             $table->string('alamat',250)->nullable();
@@ -159,6 +159,6 @@ class CreateMahasiswaImportTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mahasiswa_import');
+        Schema::dropIfExists('mahasiswa_export');
     }
 }

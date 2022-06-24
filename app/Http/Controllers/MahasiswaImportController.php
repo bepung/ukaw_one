@@ -15,10 +15,9 @@ class MahasiswaImportController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(string $filename)
+    public function index()
     {
-      return redirect()->route('home')->with("successMsg", 'index');
-      // return this()->store($filename);
+      //
     }
 
     /**
@@ -62,13 +61,13 @@ class MahasiswaImportController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  Request  $request
+     * @param  string  $angkatan
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
-      $data = DB::table('mahasiswa_import')->orderBy('nim', 'ASC')->get();
-      return view('mahasiswaImport', compact('data'));
+      //
     }
 
     /**

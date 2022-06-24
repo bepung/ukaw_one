@@ -49,6 +49,7 @@ class MahasiswaImportToModel implements ToModel, SkipsEmptyRows, SkipsOnError, W
           'telp' => isset($row['telp'])?$row['telp']:'',
           'email' => isset($row['email'])?$row['email']:'',
           'tahun_angkatan' => isset($row['tahunangkatan'])?$row['tahunangkatan']:'',
+          'angkatan' => isset($row['nim'])?substr($row['nim'],0,2):'',
           'tanggal_masuk' => isset($row['tanggalmasuk'])?$row['tanggalmasuk']:'',
           'tempat_lahir' => isset($row['tempatlahir'])?$row['tempatlahir']:'',
           'tanggal_lahir' => isset($row['tanggallahir'])?$row['tanggallahir']:'',

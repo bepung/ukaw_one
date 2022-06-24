@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class MahasiswaImport extends Model
+class MahasiswaExport extends Model
 {
-  protected $table = 'mahasiswa_import';
+  protected $table = 'mahasiswa_export';
   protected $fillable = [
     'id',
     'nim',

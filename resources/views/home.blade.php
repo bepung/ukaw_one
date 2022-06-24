@@ -1,15 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.alert')
 
-@section('content')
+@section('second_content')
 
-@if(session()->has('successMsg'))
-    <div class="alert alert-success">
-        {{ session()->get('successMsg') }}
-    </div>
-@endif
-<!-- spinner --> <section id="loading"><div id="loading-content"></div></section>
-  <!-- <button type="button" class="btn btn-primary btn-sm" onclick="window.location.href='{{ route("berkasImport.show", "0" )}}'">Lihat Data</button> -->
-  <!-- <button type="button" class="btn btn-info btn-sm" onclick="window.location='{{ route("berkasUnggah.index") }}'">Tambah Berkas</button> -->
 <div class="container">
   <h3 class="panel-tittle">Data Berkas</h3>
 <table class="table table-bordered table-striped table-hover">
