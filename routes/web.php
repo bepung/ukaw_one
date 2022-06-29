@@ -27,7 +27,9 @@ Route::resource('berkasUnggah','BerkasUnggahController')->only(['store','destroy
 Route::post('readDataMahasiswa','MahasiswaController@readData')->name('readDataMahasiswa');
 Route::get('allDataMahasiswa','MahasiswaController@allData')->name('allDataMahasiswa');
 Route::post('writeDataMahasiswa','MahasiswaController@writeData')->name('writeDataMahasiswa');
+Route::post('countDataMahasiswa_1','MahasiswaController@rowCountByFilename')->name('countDataMahasiswa_1');
+
 Route::get('exportDataMahasiswa','MahasiswaExportController@export')->name('exportDataMahasiswa');
 
-Route::resource('berkasImport','MahasiswaImportController')->only(['store']);
+Route::resource('berkasImport','MahasiswaImportController')->only(['store','destroy']);
 Auth::routes();

@@ -264,8 +264,14 @@ class MahasiswaImportController extends Controller
      * @param  \App\MahasiswaImport  $mahasiswaImport
      * @return \Illuminate\Http\Response
      */
-    public function destroy(MahasiswaImport $mahasiswaImport)
+    // public function destroy(MahasiswaImport $mahasiswaImport)
+    public function destroy(String $filenameX)
     {
-        //
+        try {
+          DB::table('mahasiswa_import')->where('filename',$filenameX)->delete();
+        } catch(\Illuminate\Database\QueryException $e) {
+          return redirect()->route('home')->with("successMsg", 'Ada kesalahan: '.$e);
+        }
+        return redirect()->route('home')->with("successMsg", 'data mahasiswa terhapus');
     }
 }

@@ -24,3 +24,5 @@ Homestead.json
 
 #bepung
 *.bepungBackup
+*.xls
+*.xlsx

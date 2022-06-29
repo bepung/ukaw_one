@@ -145,7 +145,7 @@ class MahasiswaImport extends Model
     'masa_studi_tahun',
     'masa_studi_bulan',
     'masa_studi_hari',
-    // 'masa_studi_deskripsi',
+    'masa_studi_deskripsi',
     'no_urut_data',
     'filename',
   ];

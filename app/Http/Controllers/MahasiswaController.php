@@ -8,7 +8,14 @@ use DB;
 
 class MahasiswaController extends Controller
 {
-
+  /**
+   * @param  Request  $request
+   * @return \Illuminate\Http\Response
+   */
+   public static function rowCountByFilename(String $filename){
+     $rc = DB::table('mahasiswa_import')->where('filename',$filename)->count();
+     return $rc;
+   }
   /**
    * @param  Request  $request
    * @return \Illuminate\Http\Response
