@@ -1,4 +1,11 @@
 <!doctype html>
+
+@guest
+@if((Route::currentRouteName() != 'home') || Route::currentRouteName() != 'login'))
+  <script> window.location ="{{ route("login")}}";</script>
+@endif
+@endguest
+
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -41,7 +48,7 @@
           <img src="{{ asset('img/logo.png') }}" width="50" height="50" alt="">
         </a>
 
-      <a class="navbar-brand navbar-logo">Universitas Kristen Artha Wacana</a>
+      <h5 style="color:#fff">{{ config('app.name', 'HOME') }}</h5>
       <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <i class="fas fa-bars text-white"></i>
       </button>
@@ -96,3 +103,9 @@
     @endguest
 </body>
 </html>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#tooltipex").tooltip({
+  });
+});
+</script>

@@ -41,6 +41,8 @@ class MahasiswaImportToModel implements ToModel, SkipsEmptyRows, SkipsOnError, W
      */
     public function model(array $row)
     {
+        return new MahasiswaImport();
+        //bawah ini tidak terpakai
         return new MahasiswaImport([
           'id' => isset($row['id'])?$row['id']:'',
           'nim' => isset($row['nim'])?$row['nim']:'',
