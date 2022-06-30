@@ -30,7 +30,7 @@
             @method('POST')
             @csrf
             <input type="hidden" name="filename" value="{{ $BerkasUnggah->filename}}"/>
-          <button type="submit" class="btn btn-success btn-sm" title="salin data dari berkas ini ke data mahasiswa">Salin Data</button>
+            <button type="submit" class="btn btn-success btn-sm" title="salin data dari berkas ini ke data mahasiswa">Salin Data</button>
           </form>
           @if($jumlahDataTersimpan>0)
           <form onsubmit="beginLoad();" method="POST" action="{{ route('berkasImport.destroy', $BerkasUnggah->filename )}}" style="display:inline">
@@ -46,7 +46,7 @@
             @method('DELETE')
             @csrf
             <input type="hidden" name="filename" value="{{ $BerkasUnggah->filename}}"/>
-          <button type="submit" class="btn btn-danger btn-sm" title="hapus berkasi ini dari penyimpanan">Hapus Berkas</button>
+            <button type="submit" class="btn btn-danger btn-sm" title="hapus berkasi ini dari penyimpanan">Hapus Berkas</button>
           </form>
         </td>
   </tr>

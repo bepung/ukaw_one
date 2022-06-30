@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 Route::get('/testing', function () {
     return view('testing');
 });
@@ -24,8 +24,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('berkasUnggah','BerkasUnggahController')->only(['store','destroy', 'index']);;
 
-Route::post('readDataMahasiswa','MahasiswaController@readData')->name('readDataMahasiswa');
 Route::get('allDataMahasiswa','MahasiswaController@allData')->name('allDataMahasiswa');
+Route::post('readDataMahasiswa','MahasiswaController@readData')->name('readDataMahasiswa');
+Route::get('readDataMahasiswa', function(){
+  return redirect(route('allDataMahasiswa'));
+});
 Route::post('writeDataMahasiswa','MahasiswaController@writeData')->name('writeDataMahasiswa');
 Route::post('countDataMahasiswa_1','MahasiswaController@rowCountByFilename')->name('countDataMahasiswa_1');
 

@@ -38,10 +38,12 @@ class MahasiswaController extends Controller
     if ($pendapatan!='00')array_push($wer,$arP);
     if ($lulus!='00')array_push($wer,$arL);
     $data = DB::table('mahasiswa_import')
-      ->where($wer)->orderBy('nim', 'ASC')->get()->toArray();
+    ->where($wer)->orderBy('nim', 'ASC')->get()->toArray();
     MahasiswaExport::truncate();
     $data = collect($data)->map(function($x){ return (array) $x;})->toArray();
-    $result =  DB::table('mahasiswa_export')->insert($data);
+    foreach (array_chunk($data,500) as $chunk) {
+        DB::table('mahasiswa_export')->insert($chunk);
+    }
     $pendapatan=$request->input('pPendapatan');
     $lulus=$request->input('pLulus');
     return redirect()->route('exportDataMahasiswa', [$request]);
@@ -100,36 +102,6 @@ class MahasiswaController extends Controller
         ->with('rPendapatan',$pendapatan)->with('rJurusan',$jurusan)
         ->with('rAngkatan',$angkatan)->with('rLulus',$lulus)
         ->with('successMsg','data kosong');
-// selesai
-
-
-    if ($jurusan=="00" && $angkatan=="00" && $pendapatan=='00')
-          $data = DB::table('mahasiswa_import')->orderBy('nim', 'ASC')->get();
-    else
-    if ($jurusan=="00" && $angkatan=="00")
-          $data = DB::table('mahasiswa_import')->where($kPendapatan,'=',$pendapatan)->orderBy('nim', 'ASC')->get();
-    else
-    if ($jurusan=="00" &&  $pendapatan=='00')
-          $data = DB::table('mahasiswa_import')->where($kAngkatan,'=',$angkatan)->orderBy('nim', 'ASC')->get();
-    else
-    if ($jurusan=="00")
-          $data = DB::table('mahasiswa_import')->where($kAngkatan,'=',$angkatan)->where($kPendapatan,'=',$pendapatan)->orderBy('nim', 'ASC')->get();
-    else
-    if ($angkatan=="00" && $pendapatan=='00')
-        $data = DB::table('mahasiswa_import')->where('jurusan','=',$jurusan)->orderBy('nim', 'ASC')->get();
-    else
-    if ($angkatan=="00")
-        $data = DB::table('mahasiswa_import')->where('jurusan','=',$jurusan)->where($kPendapatan,'-',$pendapatan)->orderBy('nim', 'ASC')->get();
-    else
-    if ($pendapatan=='00')
-        $data = DB::table('mahasiswa_import')->where('jurusan','=',$jurusan)->where($kAngkatan,'-',$angkatan)->orderBy('nim', 'ASC')->get();
-    else
-        $data = DB::table('mahasiswa_import')->where('jurusan','=',$jurusan)->where($kAngkatan,'-',$angkatan)->where($kPendapatan,'-',$pendapatan)->orderBy('nim', 'ASC')->get();
-    $jmlData = count($data);
-    if ($jmlData>0)
-      return view('mahasiswaImport')->with('data',$data)->with('rPendapatan',$pendapatan)->with('rJurusan',$jurusan)->with('rAngkatan',$angkatan)->with('rPendapatan',$pendapatan)->with('successMsg','data ditampilkan: '.$jmlData);
-    else
-      return view('mahasiswaImport')->with('data',$data)->with('rPendapatan',$pendapatan)->with('rJurusan',$jurusan)->with('rAngkatan',$angkatan)->with('rPendapatan',$pendapatan)->with('successMsg','data kosong');
   }
   /**
    * @return \Illuminate\Http\Response

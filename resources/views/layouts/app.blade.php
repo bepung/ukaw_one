@@ -2,7 +2,7 @@
 
 @guest
 @if((Route::currentRouteName() != 'home') || Route::currentRouteName() != 'login'))
-  <script> window.location ="{{ route("login")}}";</script>
+  <script> window.location ="{{ route("welcome")}}";</script>
 @endif
 @endguest
 

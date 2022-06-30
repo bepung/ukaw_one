@@ -10,8 +10,8 @@ class MahasiswaExport extends Model
   protected $fillable = [
     'id',
     'nim',
-    'alamat',
     'nama',
+    'alamat',
     'telp',
     'email',
     'tahun_angkatan',
@@ -113,6 +113,8 @@ class MahasiswaExport extends Model
     'kecamatan',
     'kota_kabupaten',
     'propinsi',
+
+
     'status_perkawinan',
     'jenis_tinggal_mahasiswa',
     'alat_transportasi_mahasiswa',

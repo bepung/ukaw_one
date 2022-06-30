@@ -10,8 +10,8 @@ class MahasiswaImport extends Model
   protected $fillable = [
     'id',
     'nim',
-    'alamat',
     'nama',
+    'alamat',
     'telp',
     'email',
     'tahun_angkatan',
