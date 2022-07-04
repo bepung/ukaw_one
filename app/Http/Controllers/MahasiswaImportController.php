@@ -42,7 +42,7 @@ class MahasiswaImportController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request){
-         $name = public_path('\\uploads\\') . $request->filename;
+         $name = public_path('/uploads/') . $request->filename;
          try {
             // $data = Excel::import(new MahasiswaImportToModelImport,$name);
             $data = Excel::toArray(new MahasiswaImportToModelImport,$name);
@@ -267,6 +267,7 @@ class MahasiswaImportController extends Controller
     // public function destroy(MahasiswaImport $mahasiswaImport)
     public function destroy(String $filenameX)
     {
+        // dd($filenameX);
         try {
           DB::table('mahasiswa_import')->where('filename',$filenameX)->delete();
         } catch(\Illuminate\Database\QueryException $e) {

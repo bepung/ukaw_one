@@ -65,7 +65,7 @@ class BerkasUnggahController extends Controller
       */
      public function destroy($filename)
      {
-       dd($filename);
+       //dd($filename);
        $name = public_path('\\uploads\\') . $filename;
        $str = "";
        if (File::exists($name)){

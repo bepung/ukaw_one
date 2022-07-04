@@ -46,7 +46,7 @@
             @method('DELETE')
             @csrf
             <input type="hidden" name="filename" value="{{ $BerkasUnggah->filename}}"/>
-            <button type="submit" class="btn btn-danger btn-sm" title="hapus berkasi ini dari penyimpanan">Hapus Berkas</button>
+            <button type="submit" class="btn btn-danger btn-sm" title="hapus berkas ini dari penyimpanan">Hapus Berkas</button>
           </form>
         </td>
   </tr>

@@ -22,7 +22,10 @@ Route::get('showAlert', function () {
 });
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('berkasUnggah','BerkasUnggahController')->only(['store','destroy', 'index']);;
+//Route::resource('berkasUnggah','BerkasUnggahController')->only(['store','destroy', 'index']);
+Route::get('berkasUnggah','BerkasUnggahController@index')->name('berkasUnggah.index');
+Route::post('berkasUnggah.store','BerkasUnggahController@store')->name('berkasUnggah.store');
+Route::delete('berkasUnggah.destroy/{filename}','BerkasUnggahController@destroy')->name('berkasUnggah.destroy');
 
 Route::get('allDataMahasiswa','MahasiswaController@allData')->name('allDataMahasiswa');
 Route::post('readDataMahasiswa','MahasiswaController@readData')->name('readDataMahasiswa');
@@ -34,5 +37,7 @@ Route::post('countDataMahasiswa_1','MahasiswaController@rowCountByFilename')->na
 
 Route::get('exportDataMahasiswa','MahasiswaExportController@export')->name('exportDataMahasiswa');
 
-Route::resource('berkasImport','MahasiswaImportController')->only(['store','destroy']);
+//Route::resource('berkasImport','MahasiswaImportController')->only(['store','destroy']);
+Route::post('berkasImport.store','MahasiswaImportController@store')->name('berkasImport.store');
+Route::delete('berkasImport.destroy/{filenameX}','MahasiswaImportController@destroy')->name('berkasImport.destroy');
 Auth::routes();
