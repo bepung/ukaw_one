@@ -16,7 +16,7 @@
                 <div class="card shadow">
                     <div class="card-header bg-info text-white">
                         <div class="card-title ">
-                            <h4> Unggah Berkas Data </h4>
+                            <h4>Pilih Berkas Data </h4>
                         </div>
                     </div>
 
@@ -32,10 +32,11 @@
                                 </div>
                             @endif
 
-                            <div class="form-group" {{ $errors->has('filename') ? 'has-error' : '' }}>
-                                <label for="filename"></label>
-                                    <input type="file" name="filename" id="filename" class="form-control">
-                                    <span class="text-danger"> {{ $errors->first('filename') }}</span>
+                            <div class="form-group" {{ $errors->has('file') ? 'has-error' : '' }}>
+                                <label for="file"></label>
+                                    <input type="file" name="file" id="file" class="form-control">
+                                    <span class="text-dark text-right"> Ukuran maksimal: 8000 kilobyte</span></br>
+                                    <span class="text-danger"> {{ $errors->first('file') }}</span>
                             </div>
                     </div>
 

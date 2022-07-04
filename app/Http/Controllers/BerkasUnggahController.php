@@ -39,18 +39,18 @@ class BerkasUnggahController extends Controller
      public function store(Request $request)  {
              // file validation
              $validator      =   Validator::make($request->all(),
-                 ['filename'      =>   'required|mimes:xls,xlsx|max:50000']);
+                 ['file'      =>   'required|mimes:xls,xlsx|max:8000']);
              // if validation fails
              if($validator->fails()) {
                  return back()->withErrors($validator->errors());
              }
              // if validation success
-             if($file   =   $request->file('filename')) {
+             if($file   =   $request->file('file')) {
              $name      =   time().'-'.$file->getClientOriginalName();
              $target_path    =   public_path('/uploads/');
                  if($file->move($target_path, $name)) {
                      // save file name in the database
-                     $file   =   BerkasUnggah::create(['filename' => $name, 'username' => auth()->user()->name]);
+                     $file   =   BerkasUnggah::create(['file' => $name, 'username' => auth()->user()->name]);
                      return redirect()->route('home')->with("successMsg", "berhasil unggah berkas ");
                  }
              }
