@@ -35,7 +35,7 @@
                             <div class="form-group" {{ $errors->has('file') ? 'has-error' : '' }}>
                                 <label for="file"></label>
                                     <input type="file" name="file" id="file" class="form-control">
-                                    <span class="text-dark text-right"> Ukuran maksimal: 8000 kilobyte</span></br>
+                                    <span class="text-dark text-right"> Ukuran maksimal: 8.500 kilobyte</span></br>
                                     <span class="text-danger"> {{ $errors->first('file') }}</span>
                             </div>
                     </div>
