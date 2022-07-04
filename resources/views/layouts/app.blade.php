@@ -101,6 +101,17 @@
          @csrf
     </form>
     @endguest
+    <nav class="navbar fixed-bottom navbar-light bg-light mt-0 pt-0 mb-0 pb-0">
+  <span class="navbar-text small">
+  </span>
+  <span class="navbar-text small">
+    @php
+        $thn1 = 2022;
+        $thn = date('Y');
+        echo $thn1 . (($thn1 != $thn)? '-' . $thn : '') ;
+    @endphp
+        &nbsp; &copy; bepung.net</span>
+</nav>
 </body>
 </html>
 <script type="text/javascript">
