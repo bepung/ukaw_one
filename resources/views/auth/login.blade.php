@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Masuk</title>
+    <title>Login</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
@@ -34,15 +34,16 @@
         <div class="wrap-login100 p-t-25 p-b-20">
             <form method="POST" action="{{ route('login') }}" class="login100-form validate-form">
                 @csrf
-          <span class="login100-form-title p-b-5">
+                <span class="login100-form-title p-b-5">
 						<img src="{{ asset('img/logo.png') }}" width="250px" alt="Logo"/>
-					</span>
+				</span>
+                <h4 class="text-center">{{ config('app.name')}}</h4>
                 <div class="wrap-input100 validate-input" data-validate="Enter username">
                     <input class="input100 {{ $errors->has('email') || $errors->has('username') ? 'is-invalid' : '' }}"
                            type="text"
                            id="username"
                            name="username"
-                           placeholder="Username"
+                           placeholder="username"
                            value="{{ old('email') ?: old('username') }}"
                            autocomplete="off">
                 </div>
@@ -58,7 +59,7 @@
                            class="input100 {{ $errors->has('password') ? 'is-invalid' : '' }}"
                            type="password"
                            name="password"
-                           placeholder="Kata Sandi"
+                           placeholder="password"
                            autocomplete="current-password">
                 </div>
                 <br>

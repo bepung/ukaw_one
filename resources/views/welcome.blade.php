@@ -106,7 +106,8 @@
             @endif
 
             <div class="content">
-               <img src="{{ asset('img/logo.png') }}" width="250px" alt="Logo"/>
+               <img class="pb-3" src="{{ asset('img/logo.png') }}" width="250px" alt="Logo"/>
+               <h3>{{ config('app.name')}}</h3>
                 <div class="title m-b-md">
                     Universitas Kristen Artha Wacana
                 </div>
