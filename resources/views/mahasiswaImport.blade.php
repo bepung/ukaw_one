@@ -68,7 +68,6 @@
                     </select>
                   </td>
                   <td>
-                    <button type="submit" class="btn btn-primary btn-lg pt-0 mt-0">Tampilkan Data</button>
                   </td>
                 </tr>
                   <td class="pt-3">Tahun Lulus</td><td>
@@ -91,7 +90,7 @@
                   </td>
                   <td class="pt-3">Pendapatan</td><td>
                     <select name="pPendapatan" id="pPendapatan" class="form-control" style="width: 200px;display:inline">
-                      <option value='00' @php if(!empty($rPendapatann)) if ($rPendapatann=='00') echo 'selected' @endphp>Semua data</option>
+                      <option value='00' @php if(!empty($rPendapatan)) if ($rPendapatan=='00') echo 'selected' @endphp>Semua data</option>
                       <option value='0 s.d 0' @php if(!empty($rPendapatan)) if ($rPendapatan=='0 s.d 0') echo 'selected' @endphp>0 s.d 0</option>
                       <option value='0 s.d 20.000.001' @php if(!empty($rPendapatan)) if ($rPendapatan=='0 s.d 20.000.001') echo 'selected' @endphp>0 s.d 20.000.001</option>
                       <option value='20.000.000 s.d 5.000.000' @php if(!empty($rPendapatan)) if ($rPendapatan=='20.000.000 s.d 5.000.000') echo 'selected' @endphp>20.000.000 s.d 5.000.000</option>
@@ -103,12 +102,51 @@
                     </select>
                   </td>
                   <td>
-                    @if(!empty($rJurusan) || !empty($rAngkatan) || !empty($rPendapatan) || !empty($rLulus))
-                    <button onclick="event.preventDefault(); document.getElementById('export-form').submit();" type="button" class="btn btn-success btn-lg pt-0 mt-0">Export Data</button>
-                    @else
-                    <button type="button" disabled="disabled"  class="btn btn-outline-success btn-lg pt-0 mt-0">Export Data</button>
-                    @endif
                   </td>
+                </tr>
+                <tr>
+                    <td class="pt-3">Kabupaten</td>
+                    <td>
+                        <select name="pKabupaten" id="pKabupaten" class="form-control" style="width: 200px;display:inline">
+                            <option value='00' @php if(!empty($rKabupaten)) if ($rKabupaten=='00') echo 'selected' @endphp>Semua data</option>
+                            <option value='Kota Kupang' @php if(!empty($rKabupaten)) if ($rKabupaten=='Kota Kupang') echo 'selected' @endphp>Kota Kupang</option>
+                            <option value='Kabupaten Alor' @php if(!empty($rKabupaten)) if ($rKabupaten=='Kabupaten Alor') echo 'selected' @endphp>Kabupaten Alor</option>
+                            <option value='Kabupaten Belu' @php if(!empty($rKabupaten)) if ($rKabupaten=='Kabupaten Belu') echo 'selected' @endphp>Kabupaten Belu</option>
+                            <option value='Kabupaten Ende' @php if(!empty($rKabupaten)) if ($rKabupaten=='Kabupaten Ende') echo 'selected' @endphp>Kabupaten Ende</option>
+                            <option value='Kabupaten Flores Timur' @php if(!empty($rKabupaten)) if ($rKabupaten=='Kabupaten Flores Timur') echo 'selected' @endphp>Kabupaten Flores Timur</option>
+                            <option value='Kabupaten Kupang' @php if(!empty($rKabupaten)) if ($rKabupaten=='Kabupaten Kupang') echo 'selected' @endphp>Kabupaten Kupang</option>
+                            <option value='Kabupaten Lembata' @php if(!empty($rKabupaten)) if ($rKabupaten=='Kabupaten Lembata') echo 'selected' @endphp>Kabupaten Lembata</option>
+                            <option value='Kabupaten Malaka' @php if(!empty($rKabupaten)) if ($rKabupaten=='Kabupaten Malaka') echo 'selected' @endphp>Kabupaten Malaka</option>
+                            <option value='Kabupaten Manggarai' @php if(!empty($rKabupaten)) if ($rKabupaten=='Kabupaten Manggarai') echo 'selected' @endphp>Kabupaten Manggarai</option>
+                            <option value='Kabupaten Manggarai Barat' @php if(!empty($rKabupaten)) if ($rKabupaten=='Kabupaten Manggarai Barat') echo 'selected' @endphp>Kabupaten Manggarai Barat</option>
+                            <option value='Kabupaten Manggarai Timur' @php if(!empty($rKabupaten)) if ($rKabupaten=='Kabupaten Manggarai Timur') echo 'selected' @endphp>Kabupaten Manggarai Timur</option>
+                            <option value='Kabupaten Nagekeo' @php if(!empty($rKabupaten)) if ($rKabupaten=='Kabupaten Nagekeo') echo 'selected' @endphp>Kabupaten Nagekeo</option>
+                            <option value='Kabupaten Ngada' @php if(!empty($rKabupaten)) if ($rKabupaten=='Kabupaten Ngada') echo 'selected' @endphp>Kabupaten Ngada</option>
+                            <option value='Kabupaten Rote Ndao' @php if(!empty($rKabupaten)) if ($rKabupaten=='Kabupaten Rote Ndao') echo 'selected' @endphp>Kabupaten Rote Ndao</option>
+                            <option value='Kabupaten Sabu Raijua' @php if(!empty($rKabupaten)) if ($rKabupaten=='Kabupaten Sabu Raijua') echo 'selected' @endphp>Kabupaten Sabu Raijua</option>
+                            <option value='Kabupaten Sikka' @php if(!empty($rKabupaten)) if ($rKabupaten=='Kabupaten Sikka') echo 'selected' @endphp>Kabupaten Sikka</option>
+                            <option value='Kabupaten Sumba Barat' @php if(!empty($rKabupaten)) if ($rKabupaten=='Kabupaten Sumba Barat') echo 'selected' @endphp>Kabupaten Sumba Barat</option>
+                            <option value='Kabupaten Sumba Barat Daya' @php if(!empty($rKabupaten)) if ($rKabupaten=='Kabupaten Sumba Barat Daya') echo 'selected' @endphp>Kabupaten Sumba Barat Daya</option>
+                            <option value='Kabupaten Sumba Tengah' @php if(!empty($rKabupaten)) if ($rKabupaten=='Kabupaten Sumba Tengah') echo 'selected' @endphp>Kabupaten Sumba Tengah</option>
+                            <option value='Kabupaten Sumba Timur' @php if(!empty($rKabupaten)) if ($rKabupaten=='Kabupaten Sumba Timur') echo 'selected' @endphp>Kabupaten Sumba Timur</option>
+                            <option value='Kabupaten Timor Tengah Selatan' @php if(!empty($rKabupaten)) if ($rKabupaten=='Kabupaten Timor Tengah Selatan') echo 'selected' @endphp>Kabupaten Timor Tengah Selatan</option>
+                            <option value='Kabupaten Timor Tengah Utara' @php if(!empty($rKabupaten)) if ($rKabupaten=='Kabupaten Timor Tengah Utara') echo 'selected' @endphp>Kabupaten Timor Tengah Utara</option>
+                            <option value='x' @php if(!empty($rKabupaten)) if ($rKabupaten=='x') echo 'selected' @endphp>--- tidak diisi ---</option>
+                        </select>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        <button type="submit" class="btn btn-primary btn-lg pt-0 mt-0">Tampilkan Data</button>
+                    </td>
+                    <td>
+                        @if(!empty($rJurusan) || !empty($rAngkatan) || !empty($rPendapatan) || !empty($rLulus))
+                        <button onclick="event.preventDefault(); document.getElementById('export-form').submit();" type="button" class="btn btn-success btn-lg pt-0 mt-0">Export Data</button>
+                        @else
+                        <button type="button" disabled="disabled"  class="btn btn-outline-success btn-lg pt-0 mt-0">Export Data</button>
+                        @endif
+
+                    </td>
                 </tr>
               </table>
             </form>
@@ -149,6 +187,7 @@
       <input type="hidden" name="pAngkatan" id="pAngkatan" value="@if (!empty($rAngkatan)){{$rAngkatan}}@endif">
       <input type="hidden" name="pLulus" id="pLulus" value="@if (!empty($rLulus)){{$rLulus}}@endif">
       <input type="hidden" name="pPendapatan" id="pPendapatan" value="@if (!empty($rPendapatan)){{$rPendapatan}}@endif">
+      <input type="hidden" name="pKabupaten" id="pKabupaten" value="@if (!empty($rKabupaten)){{$rKabupaten}}@endif">
       @csrf
   </form>
   @endif
