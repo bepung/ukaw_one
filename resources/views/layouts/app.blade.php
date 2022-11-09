@@ -47,8 +47,8 @@
         <a class="navbar-brand" href="#">
           <img src="{{ asset('img/logo.png') }}" width="50" height="50" alt="">
         </a>
-
-      <h5 style="color:#fff">{{ config('app.name', 'HOME') }}</h5>
+      <h4 style="color:#fff">{{ config('app.name', 'HOME') }}</h4>
+      <span class="text-light ml-3">{{ config('app.description') }}</span>
       <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <i class="fas fa-bars text-white"></i>
       </button>

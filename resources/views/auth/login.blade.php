@@ -31,13 +31,13 @@
 
 <div class="limiter">
     <div class="container-login100">
-        <div class="wrap-login100 p-t-25 p-b-20">
+        <div class="wrap-login100">
             <form method="POST" action="{{ route('login') }}" class="login100-form validate-form">
                 @csrf
                 <span class="login100-form-title p-b-5">
 						<img src="{{ asset('img/logo.png') }}" width="250px" alt="Logo"/>
 				</span>
-                <h4 class="text-center">{{ config('app.name')}}</h4>
+                <h1 class="text-center">{{ config('app.name')}}</h1>
                 <div class="wrap-input100 validate-input" data-validate="Enter username">
                     <input class="input100 {{ $errors->has('email') || $errors->has('username') ? 'is-invalid' : '' }}"
                            type="text"

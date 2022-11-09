@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>.: UKAW :.</title>
+        <title>{{config('app.name')}}</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -107,11 +107,11 @@
 
             <div class="content">
                <img class="pb-3" src="{{ asset('img/logo.png') }}" width="250px" alt="Logo"/>
-               <h3>{{ config('app.name')}}</h3>
+               <h1>{{config('app.name')}}</h1>
+               <h2>{{config('app.description')}}</h2>
                 <div class="title m-b-md">
                     Universitas Kristen Artha Wacana
                 </div>
-
                 <div class="links">
                     <a href="https://ukaw.ac.id/univ/">UKAW.AC.ID</a>
                     <a href="https://ukaw.eakademik.id/ukaw/login.jsp">E-Akademik</a>
